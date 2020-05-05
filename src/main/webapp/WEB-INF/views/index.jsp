@@ -14,7 +14,7 @@
 </head>
 <body>
 <header class="header--main-page">
-    <jsp:include page="header.jsp"/>
+<%@include file="../jspf/header.jspf" %>
 </header>
 
 <section class="stats">
@@ -116,7 +116,7 @@
 </section>
 
 <footer>
-    <jsp:include page="footer.jsp"/>
+    <%@include file="../jspf/footer.jspf" %>
 </footer>
 
 <script src="<c:url value="resources/js/app.js"/>"></script>
