@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>"/>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="/resources/js/formSummary.js" type="text/javascript"></script>
+    <script src="/resources/js/formValidation.js" type="text/javascript"></script>
 </head>
 <body>
 <header class="header--form-page">
@@ -83,7 +84,7 @@
                 </div>
 
                 <div class="form-group form-group--buttons">
-                    <button type="button" class="btn next-step">Dalej</button>
+                    <button type="button" class="btn next-step" id="step1button" disabled="disabled">Dalej</button>
                 </div>
             </div>
 
@@ -100,7 +101,7 @@
 
                 <div class="form-group form-group--buttons">
                     <button type="button" class="btn prev-step">Wstecz</button>
-                    <button type="button" class="btn next-step">Dalej</button>
+                    <button type="button" class="btn next-step" id="step2button" disabled="disabled">Dalej</button>
                 </div>
             </div>
 
@@ -126,7 +127,7 @@
 
                 <div class="form-group form-group--buttons">
                     <button type="button" class="btn prev-step">Wstecz</button>
-                    <button type="button" class="btn next-step">Dalej</button>
+                    <button type="button" class="btn next-step" id="step3button" disabled="disabled">Dalej</button>
                 </div>
             </div>
 
@@ -134,7 +135,7 @@
             <div data-step="4">
                 <h3>Podaj adres oraz termin odbioru rzecz przez kuriera:</h3>
 
-                <div class="form-section form-section--columns">
+                <div class="form-section form-section--columns" id="step4">
                     <div class="form-section--column">
                         <h4>Adres odbioru</h4>
                         <div class="form-group form-group--inline">
@@ -180,7 +181,7 @@
                 </div>
                 <div class="form-group form-group--buttons">
                     <button type="button" class="btn prev-step">Wstecz</button>
-                    <button type="button" class="btn next-step">Dalej</button>
+                    <button type="button" class="btn next-step" id="step4button" disabled="disabled">Dalej</button>
                 </div>
             </div>
 
