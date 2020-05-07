@@ -28,6 +28,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .defaultSuccessUrl("/",true)
                 .failureUrl("/login?error=true")
         ;
+
+        http.logout()
+                .logoutUrl("/logout")
+                .logoutSuccessUrl("/")
+        ;
     }
 
 }
