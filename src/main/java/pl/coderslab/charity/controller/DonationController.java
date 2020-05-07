@@ -1,5 +1,6 @@
 package pl.coderslab.charity.controller;
 
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +13,7 @@ import pl.coderslab.charity.repository.InstitutionRepository;
 
 @Controller
 @RequestMapping("/donate")
+@Secured("ROLE_USER")
 public class DonationController {
 
     private CategoryRepository categoryRepository;
