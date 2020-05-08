@@ -29,7 +29,7 @@
         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 
         <div class="form-group form-group--buttons">
-            <a href="#" class="btn btn--without-border">Załóż konto</a>
+            <a href="/register" class="btn btn--without-border">Załóż konto</a>
             <button class="btn" type="submit">Zaloguj się</button>
         </div>
     </form>

@@ -8,11 +8,11 @@ import pl.coderslab.charity.model.User;
 import pl.coderslab.charity.service.UserService;
 
 @Controller
-public class UserController {
+public class RegisterController {
 
     private final UserService userService;
 
-    public UserController(UserService userService) {
+    public RegisterController(UserService userService) {
         this.userService = userService;
     }
 

@@ -8,10 +8,10 @@
                 Witaj, <sec:authentication property="principal.user.firstName"/>
                 <ul class="dropdown">
                     <li><a href="#">Profil</a></li>
-                    <li><a href="#">Moje zbiórki</a></li>
+                    <li><a href="/user/donations">Moje zbiórki</a></li>
                     <li>
                         <form action="/logout" method="post">
-                            <a href="javascript:;" onclick="parentNode.submit();">Wyloguj</a>
+                            <a href="javascript:" onclick="parentNode.submit();">Wyloguj</a>
                             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                         </form>
                     </li>
