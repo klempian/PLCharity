@@ -17,7 +17,6 @@ import pl.coderslab.charity.repository.InstitutionRepository;
 import java.util.List;
 
 @Controller
-//@RequestMapping("/donate")
 @Secured("ROLE_USER")
 public class DonationController {
 

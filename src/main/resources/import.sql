@@ -1,7 +1,7 @@
 # SET ROLES AND FIRST ADMIN USER #
 
 INSERT INTO role (name) VALUES ('ROLE_ADMIN'), ('ROLE_USER');
-INSERT INTO user (enabled, first_name, last_name, password, username) VALUES (1, 'admnin', 'admin', '$2a$10$wGyxChdSLy9LPrwk3/c2B.qDm1EGTNRSG2u5Nyg/dgrZKcDrov89e', 'admin@admin.com');
+INSERT INTO user (enabled, first_name, last_name, password, username) VALUES (1, 'admin', 'admin', '$2a$10$wGyxChdSLy9LPrwk3/c2B.qDm1EGTNRSG2u5Nyg/dgrZKcDrov89e', 'admin@admin.com');
 INSERT INTO user_role (user_id, role_id) VALUES (1,1);
 
 # SAMPLE DATA FOR DEMO PURPOSES
