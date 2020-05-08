@@ -15,14 +15,6 @@ import pl.coderslab.charity.service.SpringDataUserDetailsService;
 @EnableGlobalMethodSecurity(securedEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-//    @Override
-//    public void configure(AuthenticationManagerBuilder auth) throws Exception {
-//        auth.inMemoryAuthentication()
-//                .withUser("user1@user.com").password("{noop}user123").roles("USER")
-//                .and()
-//                .withUser("admin1@admin.com").password("{noop}admin123").roles("ADMIN");
-//    }
-
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.formLogin()
