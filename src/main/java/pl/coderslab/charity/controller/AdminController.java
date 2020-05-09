@@ -4,10 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pl.coderslab.charity.model.Category;
-import pl.coderslab.charity.model.Institution;
 import pl.coderslab.charity.repository.CategoryRepository;
 import pl.coderslab.charity.repository.DonationRepository;
 import pl.coderslab.charity.repository.InstitutionRepository;
@@ -20,7 +18,6 @@ import java.util.Map;
 
 @Controller
 @Secured("ROLE_ADMIN")
-@RequestMapping("/admin")
 public class AdminController {
 
     private UserRepository userRepository;
@@ -38,7 +35,7 @@ public class AdminController {
         this.categoryRepository = categoryRepository;
     }
 
-    @RequestMapping("/")
+    @RequestMapping("/admin/")
     public String viewIndexPage(Model model) {
 
         Long userCount = userRepository.countAllByEnabledAndRolesContains(1, roleRepository.findByName("ROLE_USER"));
@@ -60,12 +57,4 @@ public class AdminController {
         return "admin/dashboard";
     }
 
-    @GetMapping("/institutions/")
-    public String viewInstitutions(Model model) {
-
-        List<Institution> institutions = institutionRepository.findAll();
-        model.addAttribute("institutions", institutions);
-
-        return "admin/institutions";
-    }
 }

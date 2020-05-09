@@ -26,6 +26,16 @@
     <h1 class="h3 mb-2 text-gray-800">Fundacje</h1>
 
     <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">
+                <a href="add-edit" class="btn btn-primary btn-icon-split">
+                    <span class="icon text-white-50">
+                      <i class="fas fa-plus"></i>
+                    </span>
+                    <span class="text">Nowa fundacja</span>
+                </a>
+            </h6>
+        </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="institutionTable" width="100%" cellspacing="0">
@@ -48,13 +58,13 @@
                                 <td>
                                     <c:out value="${institution.description}"/>
                                     <div class="float-right">
-                                        <a href="#" class="btn btn-warning btn-icon-split">
+                                        <a href="add-edit?institutionId=<c:out value="${institution.id}"/>" class="btn btn-warning btn-icon-split">
                                         <span class="icon text-white-50">
                                             <i class="fas fa-exclamation-triangle"></i>
                                         </span>
                                             <span class="text">Edytuj</span>
                                         </a>
-                                        <a href="#" class="btn btn-danger btn-icon-split">
+                                        <a href="#" data-name="<c:out value="${institution.name}"/>" data-id="<c:out value="${institution.id}"/>" class="btn btn-danger btn-icon-split delete-id" data-toggle="modal" data-target="#deleteModal">
                                         <span class="icon text-white-50">
                                           <i class="fas fa-trash"></i>
                                         </span>
@@ -76,8 +86,31 @@
     <i class="fas fa-angle-up"></i>
 </a>
 
-<!-- jQuery -->
+<!-- Delete Modal-->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="deleteModalLabel">Usuń</h4>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h3>Czy na pewno chcesz usunąć: <span id="modalDeleteName" class="font-weight-bold"></span> ?</h3>
+                <h4>Wszystkie darowizny powiązane z tą fundacją zostaną usunięte.<br>Tej operacji nie można cofnąć!</h4>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Anuluj</button>
+                <a class="btn btn-danger inst-del" href="delete?institutionId=">Usuń</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap core JavaScript-->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
 <!-- Page level plugins -->
 <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
@@ -86,5 +119,6 @@
 <!-- Page level custom scripts -->
 <script src="<c:url value="/resources/js/datatables.js"/>"></script>
 <script src="<c:url value="/resources/js/app.js"/>"></script>
+<script src="<c:url value="/resources/js/modal.js"/>"></script>
 </body>
 </html>

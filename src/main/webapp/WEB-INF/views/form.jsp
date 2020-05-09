@@ -118,9 +118,9 @@
                                 <form:radiobutton path="institution" value="${institution.id}" data-name="${institution.name}"/>
                                 <span class="checkbox radio"></span>
                                 <span class="description">
-                            <div class="title"><c:out value="${institution.name}"/></div>
-                            <div class="subtitle"><c:out value="${institution.description}"/></div>
-                        </span>
+                                    <div class="title"><c:out value="${institution.name}"/></div>
+                                    <div class="subtitle"><c:out value="${institution.description}"/></div>
+                                </span>
                             </label>
                         </div>
                     </c:forEach>

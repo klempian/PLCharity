@@ -516,6 +516,24 @@ h2:after {
   border: 1px solid #3c3c3c;
 }
 
+.btn-primary {
+  color: #fff;
+  background-color: #4e73df;
+  border-color: #4e73df;
+}
+
+.btn-secondary {
+  color: #fff;
+  background-color: #858796;
+  border-color: #858796;
+}
+
+.btn-success {
+  color: #fff;
+  background-color: #1cc88a;
+  border-color: #1cc88a;
+}
+
 .btn-warning {
   color: #fff;
   background-color: #f6c23e;
@@ -573,6 +591,10 @@ form .form-group textarea {
   width: 100%;
   resize: none;
   font-size: 1.8rem;
+}
+
+.p-5 form .form-group input:not([type="checkbox"]):not([type="radio"]) {
+  max-width: 100%;
 }
 
 /* line 21, scss/modules/_forms.scss */

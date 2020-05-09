@@ -42,11 +42,11 @@
         <sec:authorize access="hasRole('ADMIN')">
     <ul id="navbar">
             <li><a href="/admin/" class="btn btn--without-border">Dashboard</a></li>
-            <li><a href="/admin/donations/" class="btn btn--without-border">Darowizny</a></li>
-            <li><a href="/admin/users/" class="btn btn--without-border">Użytkownicy</a></li>
-            <li><a href="/admin/admins/" class="btn btn--without-border">Admini</a></li>
-            <li><a href="/admin/institutions/" class="btn btn--without-border">Fundacje</a></li>
-            <li><a href="/admin/categories/" class="btn btn--without-border">Kategorie</a></li>
+            <li><a href="/donations/" class="btn btn--without-border">Darowizny</a></li>
+            <li><a href="/users/" class="btn btn--without-border">Użytkownicy</a></li>
+            <li><a href="/admins/" class="btn btn--without-border">Admini</a></li>
+            <li><a href="/institutions/" class="btn btn--without-border">Fundacje</a></li>
+            <li><a href="/categories/" class="btn btn--without-border">Kategorie</a></li>
         </sec:authorize>
     </ul>
 </nav>
