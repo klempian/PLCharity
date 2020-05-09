@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <nav class="container container--70">
     <sec:authorize access="isAuthenticated()">
@@ -8,7 +9,9 @@
                 Witaj, <sec:authentication property="principal.user.firstName"/>
                 <ul class="dropdown">
                     <li><a href="#">Profil</a></li>
+                    <sec:authorize access="hasRole('USER')">
                     <li><a href="/user/donations">Moje zbiórki</a></li>
+                    </sec:authorize>
                     <li>
                         <form action="/logout" method="post">
                             <a href="javascript:" onclick="parentNode.submit();">Wyloguj</a>
@@ -27,8 +30,8 @@
         </ul>
     </sec:authorize>
 
-    <ul>
         <sec:authorize access="hasRole('USER') || !isAuthenticated()">
+    <ul>
         <li><a href="/" class="btn btn--without-border active">Start</a></li>
         <li><a href="/#steps" class="btn btn--without-border">O co chodzi?</a></li>
         <li><a href="/#about-us" class="btn btn--without-border">O nas</a></li>
@@ -36,5 +39,15 @@
         <li><a href="/donate/" class="btn btn--without-border">Przekaż dary</a></li>
         <li><a href="/#contact" class="btn btn--without-border">Kontakt</a></li>
         </sec:authorize>
+        <sec:authorize access="hasRole('ADMIN')">
+    <ul id="navbar">
+            <li><a href="/admin/" class="btn btn--without-border">Dashboard</a></li>
+            <li><a href="/#about-us" class="btn btn--without-border">Darowizny</a></li>
+            <li><a href="/#help" class="btn btn--without-border">Użytkownicy</a></li>
+            <li><a href="/donate/" class="btn btn--without-border">Admini</a></li>
+            <li><a href="/#contact" class="btn btn--without-border">Fundacje</a></li>
+        </sec:authorize>
     </ul>
 </nav>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+<script src="<c:url value="/resources/js/scripts.js"/>"></script>
