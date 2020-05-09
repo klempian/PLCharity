@@ -13,4 +13,4 @@ INSERT INTO institutions (name, description) VALUES ('Fundacja "A kogo"', 'Cel i
 INSERT INTO institutions (name, description) VALUES ('Fundacja “Dla dzieci"', 'Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji życiowej.');
 INSERT INTO institutions (name, description) VALUES ('Fundacja “Bez domu”', 'Cel i misja: Pomoc dla osób nie posiadających miejsca zamieszkania.');
 
-INSERT INTO categories (name) VALUES ('ubrania, które nadają się do ponownego użycia'), ('ubrania, do wyrzucenia'), ('zabawki'), ('książki'), ('inne');
+INSERT INTO categories (name) VALUES ('ubrania'), ('meble'), ('zabawki'), ('książki'), ('inne');

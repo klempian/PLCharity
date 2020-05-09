@@ -425,7 +425,7 @@ h2:after {
   content: "";
   display: block;
   width: 256px;
-  height: 40px;
+  height: 34px;
   background-image: url(../images/decoration.svg);
   background-size: contain;
   margin-top: 25px;
@@ -514,6 +514,37 @@ h2:after {
 /* line 41, scss/modules/_buttons.scss */
 .btn.active {
   border: 1px solid #3c3c3c;
+}
+
+.btn-warning {
+  color: #fff;
+  background-color: #f6c23e;
+  border-color: #f6c23e;
+}
+
+.btn-danger {
+  color: #fff;
+  background-color: #e74a3b;
+  border-color: #e74a3b;
+}
+
+.btn-icon-split {
+  padding: 0;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.btn-icon-split .text {
+  display: inline-block;
+  padding: .7rem 1rem;
+}
+
+.btn-icon-split .icon {
+  background: rgba(0,0,0,.15);
+  display: inline-block;
+  padding: .7rem .7rem;
 }
 
 /* line 1, scss/modules/_forms.scss */
@@ -1844,7 +1875,6 @@ footer .bottom-line--icons a img {
 
 .table-responsive {
   font-size: 1.6rem;
-  width: 70vw;
 }
 
 .text-xs {
