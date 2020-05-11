@@ -25,7 +25,7 @@ public class InstitutionController {
     }
 
     @RequestMapping("/")
-    public String viewInstitutions(Model model) {
+    public String viewInstitutionList(Model model) {
 
         List<Institution> institutions = institutionRepository.findAll();
         model.addAttribute("institutions", institutions);
@@ -39,6 +39,7 @@ public class InstitutionController {
             Institution institution = institutionId == null ? new Institution() : institutionRepository.findById(institutionId).get();
             model.addAttribute("institution", institution);
         } catch (NoSuchElementException e) {
+//            add error message
             return "redirect:/institutions/";
         }
 
@@ -59,6 +60,7 @@ public class InstitutionController {
         Institution institution = institutionRepository.findById(institutionId).get();
             institutionRepository.delete(institution);
         } catch (NoSuchElementException e) {
+//            add error message
             return "redirect:/institutions/";
         }
 

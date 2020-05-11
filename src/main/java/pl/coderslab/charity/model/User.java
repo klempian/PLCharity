@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.Transient;
 import java.util.Set;
 
 @Data
@@ -29,6 +30,9 @@ public class User {
     private String username;
 
     private String password;
+
+    @Transient
+    private String retypePassword;
 
     private int enabled;
 

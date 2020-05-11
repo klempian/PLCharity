@@ -593,7 +593,7 @@ form .form-group textarea {
   font-size: 1.8rem;
 }
 
-.p-5 form .form-group input:not([type="checkbox"]):not([type="radio"]) {
+.wide-form form .form-group input:not([type="checkbox"]):not([type="radio"]) {
   max-width: 100%;
 }
 
@@ -643,6 +643,11 @@ form .form-group--checkbox {
   font-size: 1.8rem;
 }
 
+form .form-group--checkbox-large {
+  width: calc(1.5em + .75rem + 2px);
+  height: calc(1.5em + .75rem + 2px);
+}
+
 /* line 53, scss/modules/_forms.scss */
 form .form-group--checkbox label {
   display: -webkit-box;
@@ -651,6 +656,12 @@ form .form-group--checkbox label {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+form .form-group .bigLabel {
+  font-size: 1.8rem;
+  vertical-align: bottom;
+  margin-left: 10px;
 }
 
 /* line 58, scss/modules/_forms.scss */

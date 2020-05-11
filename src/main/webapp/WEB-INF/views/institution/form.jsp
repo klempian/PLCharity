@@ -27,7 +27,7 @@
 
     <div class="card shadow mb-4">
         <div class="card-body">
-            <div class="p-5">
+            <div class="p-5 wide-form">
                 <form:form modelAttribute="institution" method="post">
                     <div class="form-group form-group--inline">
                         <form:input path="name" placeholder="Podaj nazwę fundacji" class="form-control"/>
