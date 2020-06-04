@@ -1,5 +1,6 @@
 package pl.coderslab.charity.controller;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,16 +14,13 @@ import pl.coderslab.charity.repository.InstitutionRepository;
 import java.util.List;
 import java.util.NoSuchElementException;
 
+@RequiredArgsConstructor
 @Controller
 @Secured("ROLE_ADMIN")
 @RequestMapping("/institutions")
 public class InstitutionController {
 
-    private InstitutionRepository institutionRepository;
-
-    public InstitutionController(InstitutionRepository institutionRepository) {
-        this.institutionRepository = institutionRepository;
-    }
+    private final InstitutionRepository institutionRepository;
 
     @RequestMapping("/")
     public String viewInstitutionList(Model model) {

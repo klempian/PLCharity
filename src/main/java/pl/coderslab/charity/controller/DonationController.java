@@ -1,5 +1,6 @@
 package pl.coderslab.charity.controller;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
@@ -16,19 +17,14 @@ import pl.coderslab.charity.repository.InstitutionRepository;
 
 import java.util.List;
 
+@RequiredArgsConstructor
 @Controller
 @Secured("ROLE_USER")
 public class DonationController {
 
-    private CategoryRepository categoryRepository;
-    private InstitutionRepository institutionRepository;
-    private DonationRepository donationRepository;
-
-    public DonationController(CategoryRepository categoryRepository, InstitutionRepository institutionRepository, DonationRepository donationRepository) {
-        this.categoryRepository = categoryRepository;
-        this.institutionRepository = institutionRepository;
-        this.donationRepository = donationRepository;
-    }
+    private final CategoryRepository categoryRepository;
+    private final InstitutionRepository institutionRepository;
+    private final DonationRepository donationRepository;
 
     @GetMapping("/donate")
     public String viewForm(@AuthenticationPrincipal CurrentUser currentUser, Model model) {

@@ -1,5 +1,6 @@
 package pl.coderslab.charity.controller;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,18 +12,12 @@ import pl.coderslab.charity.repository.InstitutionRepository;
 import java.util.List;
 
 
+@RequiredArgsConstructor
 @Controller
 public class HomeController {
 
-    private InstitutionRepository institutionRepository;
-    private DonationRepository donationRepository;
-
-    @Autowired
-    public HomeController(InstitutionRepository institutionRepository, DonationRepository donationRepository) {
-        this.institutionRepository = institutionRepository;
-        this.donationRepository = donationRepository;
-    }
-
+    private final InstitutionRepository institutionRepository;
+    private final DonationRepository donationRepository;
 
     @RequestMapping("/")
     public String homeAction(Model model){

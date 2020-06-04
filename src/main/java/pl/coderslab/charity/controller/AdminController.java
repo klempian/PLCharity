@@ -1,6 +1,6 @@
 package pl.coderslab.charity.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,27 +21,18 @@ import java.util.List;
 import java.util.Map;
 import java.util.NoSuchElementException;
 
+@RequiredArgsConstructor
 @Controller
 @Secured("ROLE_ADMIN")
 public class AdminController {
 
     private final UserService userService;
 
-    private UserRepository userRepository;
-    private RoleRepository roleRepository;
-    private InstitutionRepository institutionRepository;
-    private DonationRepository donationRepository;
-    private CategoryRepository categoryRepository;
-
-    @Autowired
-    public AdminController(UserService userService, UserRepository userRepository, RoleRepository roleRepository, InstitutionRepository institutionRepository, DonationRepository donationRepository, CategoryRepository categoryRepository) {
-        this.userService = userService;
-        this.userRepository = userRepository;
-        this.roleRepository = roleRepository;
-        this.institutionRepository = institutionRepository;
-        this.donationRepository = donationRepository;
-        this.categoryRepository = categoryRepository;
-    }
+    private final UserRepository userRepository;
+    private final RoleRepository roleRepository;
+    private final InstitutionRepository institutionRepository;
+    private final DonationRepository donationRepository;
+    private final CategoryRepository categoryRepository;
 
     @RequestMapping("/admin/")
     public String viewIndexPage(Model model) {
