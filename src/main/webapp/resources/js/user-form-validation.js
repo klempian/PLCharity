@@ -2,9 +2,9 @@ $('form :input').each(function () {
     var input = $(this);
     input.on('keyup', function () {
         if (input.val() !== '') {
-            input.css('border-color', 'green');
+            input.removeClass('is-invalid').addClass('is-valid');
             if (input.val().trim() === '') {
-                input.css('border-color', 'red');
+                input.removeClass('is-valid').addClass('is-invalid');
             }
         }
         else {
@@ -38,10 +38,10 @@ $('#email').on('keyup', function () {
         $(this).css('border-color', '#3c3c3c');
     }
     else if (checkEmail($(this).val())){
-        $(this).css('border-color', 'green');
+        $(this).removeClass('is-invalid').addClass('is-valid');
     }
     else {
-        $(this).css('border-color', 'red');
+        $(this).removeClass('is-valid').addClass('is-invalid');
     }
     return true;
 

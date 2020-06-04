@@ -1,4 +1,4 @@
-package pl.coderslab.charity.service;
+package pl.coderslab.charity.service.impl;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -6,12 +6,13 @@ import pl.coderslab.charity.model.Role;
 import pl.coderslab.charity.model.User;
 import pl.coderslab.charity.repository.RoleRepository;
 import pl.coderslab.charity.repository.UserRepository;
+import pl.coderslab.charity.service.UserService;
 
 import java.util.Arrays;
 import java.util.HashSet;
 
 @Service
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;

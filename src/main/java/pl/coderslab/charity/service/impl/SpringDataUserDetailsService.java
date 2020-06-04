@@ -1,4 +1,4 @@
-package pl.coderslab.charity.service;
+package pl.coderslab.charity.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -8,16 +8,17 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import pl.coderslab.charity.model.CurrentUser;
 import pl.coderslab.charity.model.User;
+import pl.coderslab.charity.service.UserService;
 
 import java.util.HashSet;
 import java.util.Set;
 
 public class SpringDataUserDetailsService implements UserDetailsService {
 
-    private UserServiceImpl userService;
+    private UserService userService;
 
     @Autowired
-    public void setUserRepository(UserServiceImpl userService) {
+    public void setUserRepository(UserService userService) {
         this.userService = userService;
     }
 

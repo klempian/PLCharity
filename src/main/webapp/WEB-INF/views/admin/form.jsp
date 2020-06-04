@@ -30,9 +30,12 @@
             <div class="p-5 wide-form">
                 <form:form modelAttribute="admin" method="post">
 
-                    <div class="form-group col-md-6">
-                        <form:input path="firstName" placeholder="Imię" class="form-control" required="true" oninvalid="InvalidMsg(this)" oninput="setCustomValidity('')" title="Podaj imię"/>
-                    </div>
+                    <spring:bind path="firstName">
+                        <div class="form-group col-md-6 ${status.error ? 'is-invalid' : '' }">
+                            <form:input path="firstName" placeholder="Imię" class="form-control ${status.error ? 'is-invalid' : '' }" required="true" oninvalid="InvalidMsg(this)" oninput="setCustomValidity('')" title="Podaj imię"/>
+                        </div>
+                        <form:errors path="firstName" cssClass="invalid-feedback" element="div"/>
+                    </spring:bind>
                     <div class="form-group col-md-6">
                         <form:input path="lastName" placeholder="Nazwisko" class="form-control" required="true" oninvalid="InvalidMsg(this)" oninput="setCustomValidity('')" title="Podaj nazwisko"/>
                     </div>
