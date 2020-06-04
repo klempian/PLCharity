@@ -2,6 +2,7 @@ package pl.coderslab.charity.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import pl.coderslab.charity.model.Category;
+import pl.coderslab.charity.model.CurrentUser;
 import pl.coderslab.charity.model.User;
 import pl.coderslab.charity.repository.CategoryRepository;
 import pl.coderslab.charity.repository.DonationRepository;
@@ -17,6 +19,7 @@ import pl.coderslab.charity.repository.RoleRepository;
 import pl.coderslab.charity.repository.UserRepository;
 import pl.coderslab.charity.service.UserService;
 
+import java.security.Principal;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -93,10 +96,15 @@ public class AdminController {
     }
 
     @GetMapping("/admins/delete")
-    public String deleteAdmin(@RequestParam Long adminId) {
+    public String deleteAdmin(@RequestParam Long adminId, @AuthenticationPrincipal CurrentUser currentUser) {
         try {
             User admin = userRepository.findById(adminId).get();
-            userService.removeAdmin(admin);
+            if (!admin.equals(currentUser.getUser())) {
+                userService.removeAdmin(admin);
+            }
+//            else {
+//                add error message
+//            }
         } catch (NoSuchElementException e) {
 //            add error message
             return "redirect:/admins/";

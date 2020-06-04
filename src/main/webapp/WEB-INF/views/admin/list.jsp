@@ -60,20 +60,22 @@
                                 <td><c:out value="${admin.lastName}"/></td>
                                 <td>
                                     <c:out value="${admin.username}"/>
-                                    <div class="float-right">
-                                        <a href="add-edit?adminId=<c:out value="${admin.id}"/>" class="btn btn-warning btn-icon-split">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-exclamation-triangle"></i>
-                                        </span>
-                                            <span class="text">Edytuj</span>
-                                        </a>
-                                        <a href="#" data-name="<c:out value="${admin.firstName} ${admin.lastName}"/>" data-id="<c:out value="${admin.id}"/>" class="btn btn-danger btn-icon-split delete-id" data-toggle="modal" data-target="#deleteModal">
-                                        <span class="icon text-white-50">
-                                          <i class="fas fa-trash"></i>
-                                        </span>
-                                            <span class="text">Usuń</span>
-                                        </a>
-                                    </div>
+                                    <c:if test="${pageContext.request.userPrincipal.name != admin.username}">
+                                        <div class="float-right">
+                                            <a href="add-edit?adminId=<c:out value="${admin.id}"/>" class="btn btn-warning btn-icon-split">
+                                            <span class="icon text-white-50">
+                                                <i class="fas fa-exclamation-triangle"></i>
+                                            </span>
+                                                <span class="text">Edytuj</span>
+                                            </a>
+                                            <a href="#" data-name="<c:out value="${admin.firstName} ${admin.lastName}"/>" data-id="<c:out value="${admin.id}"/>" class="btn btn-danger btn-icon-split delete-id" data-toggle="modal" data-target="#deleteModal">
+                                            <span class="icon text-white-50">
+                                              <i class="fas fa-trash"></i>
+                                            </span>
+                                                <span class="text">Usuń</span>
+                                            </a>
+                                        </div>
+                                    </c:if>
                                 </td>
                             </tr>
                         </c:forEach>
