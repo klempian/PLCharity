@@ -1,12 +1,45 @@
-<img alt="Logo" src="http://coderslab.pl/svg/logo-coderslab.svg" width="400">
+
+# Charity webapp
+in progress
+
+## Overview
+Donation service.
+
+Users can donate to charity organizations stuff they no longer need.
+Donated goods are sorted by categories, admin can view donations, charts, manage donations, organizations, admins and users.
+
+##
+* Spring Boot
+* Spring Form
+* Hibernate
+* Spring Data JPA
+* Spring Security
+* JS
+
+----------------------------------------------------------------------------------------
 
 
-Przed przystąpieniem do pracy  przeczytaj poniższe wskazówki.
-## Jak zacząć?
+#### Running the app
 
-1. Zaimportuj projekt jako projekt `Maven`, wg poniższych wskazówek:
+Insert database connection details in **application.properties** file:
+ `src/main/resources/`
+ 
+ sample data included in **import.sql** file: `src/main/resources/`
 
-	* W `IntelliJ` wybieramy: `File –> New –> Project from Existing Sources...`
-	* Wskazujemy lokalizację katalogu ze sklonowanym projektem i zatwierdzamy.
-	* Następnie w nowym oknie wybieramy: `Import project from external model` i wskazujemy `Maven`
-	* Wybieramy kolejno opcje: `Next –> Next –> Next –> Finish`
+admin login details:
+
+    username: admin@admin.com
+    password: admin
+
+user login details:
+
+    username: user@user.com
+    password: user
+
+run:
+
+    mvn spring-boot:run
+
+
+### In progress
+
