@@ -1,4 +1,4 @@
-$('form :input').each(function () {
+$('form :input').not($('#retype_password')).each(function () {
     var input = $(this);
     input.on('keyup', function () {
         if (input.val() !== '') {
@@ -8,7 +8,7 @@ $('form :input').each(function () {
             }
         }
         else {
-            input.css('border-color', '#3c3c3c');
+            input.removeClass('is-invalid').removeClass('is-valid');
         }
     });
 });
@@ -19,13 +19,16 @@ var retypePassword = document.getElementById('retype_password');
 function validatePassword() {
 
     if (password.value === "" && retypePassword.value === "") {
-        retypePassword.style.borderColor = '#3c3c3c';
+        password.classList.remove('is-invalid', 'is-valid');
+        retypePassword.classList.remove('is-invalid', 'is-valid');
     } else if (password.value === retypePassword.value) {
-        retypePassword.style.borderColor = 'green';
+        retypePassword.classList.remove('is-invalid');
+        retypePassword.classList.add('is-valid');
         try{retypePassword.setCustomValidity('')}catch(e){}
     } else {
         retypePassword.setCustomValidity('Hasła muszą być identyczne');
-        retypePassword.style.borderColor = 'red';
+        retypePassword.classList.remove('is-valid');
+        retypePassword.classList.add('is-invalid');
         return false;
     }
     return true;
@@ -35,7 +38,7 @@ retypePassword.onkeyup = validatePassword;
 
 $('#email').on('keyup', function () {
     if ($(this).val() === '') {
-        $(this).css('border-color', '#3c3c3c');
+        $(this).removeClass('is-invalid').removeClass('is-invalid');
     }
     else if (checkEmail($(this).val())){
         $(this).removeClass('is-invalid').addClass('is-valid');
