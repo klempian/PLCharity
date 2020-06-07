@@ -11,4 +11,6 @@ public interface UserService {
     void saveAdmin (User user);
 
     void removeAdmin (User user);
+
+    void toggleUserActive (User user);
 }

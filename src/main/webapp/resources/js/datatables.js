@@ -16,4 +16,11 @@ $(document).ready(function() {
             "orderable": false
         } ]
     });
+
+    $('#userTable').DataTable({
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Polish.json"
+        },
+        "order": [[1, "asc"], [0, "asc"], [2, "asc"]]
+    });
 });

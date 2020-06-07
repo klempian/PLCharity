@@ -51,4 +51,11 @@ public class UserServiceImpl implements UserService {
     public void removeAdmin(User user) {
         userRepository.delete(user);
     }
+
+    @Override
+    public void toggleUserActive(User user) {
+        int active = Math.abs(user.getEnabled() - 1);
+        user.setEnabled(active);
+        userRepository.save(user);
+    }
 }
